@@ -1,0 +1,21 @@
+<article class="book-details">
+  <div class="book-main">
+    <section class="book-info">
+      <h1><%= @book.title %></h1>
+      <span><%= @book.author %></span>
+      <div class="rating"><%= @book.rating %></div>
+      <p><%= @book.description %></p>
+    </section>
+    <div class="book-picture">
+      <%= image_tag @book.photo, alt: "Foto de #{@book.title}" %>
+    </div>
+  </div>
+  <div class="book-secondary">
+    <ul>
+      <li><strong>ISBN</strong>: <%= @book.isbn %></li>
+      <li><strong>Editorial</strong>: <%= @book.publisher %></li>
+      <li><strong>Fecha de publicación</strong>: <%= @book.published_at %></li>
+      <li><strong>Paperback</strong>: <%= @book.paperback %> p ́aginas</li>
+    </ul>
+  </div>
+</article>
