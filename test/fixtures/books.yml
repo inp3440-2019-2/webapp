@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  author: MyString
+  rating: 9.99
+  photo: MyString
+  isbn: MyString
+  publisher: MyString
+  published_at: 2019-10-09
+  paperback: MyString
+
+two:
+  title: MyString
+  description: MyString
+  author: MyString
+  rating: 9.99
+  photo: MyString
+  isbn: MyString
+  publisher: MyString
+  published_at: 2019-10-09
+  paperback: MyString
