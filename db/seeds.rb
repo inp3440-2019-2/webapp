@@ -203,3 +203,15 @@ A startling and haunting vision of the world, 1984 is so powerful that it is com
   published_at: Date.new(1961, 1, 1),
   paperback: '328',
 )
+
+# Creamos 10 autores iniciales
+Author.create(name: 'Robert C. Martin')
+Author.create(name: 'Ilya Grigorik')
+Author.create(name: 'Stephen Hawking')
+Author.create(name: 'Yuval Noah Harari')
+Author.create(name: 'J.K. Rowling')
+Author.create(name: 'Viktor E. Frankl')
+Author.create(name: 'Randall Munroe')
+Author.create(name: 'Anne Frank')
+Author.create(name: 'J.R.R. Tolkien')
+Author.create(name: 'George Orwell')
