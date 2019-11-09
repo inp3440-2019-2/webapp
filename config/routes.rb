@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     devise_for :users
   end
 
-  resources :books, only: [:index, :show]
+  resources :books, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
 
   root to: 'books#index'
 

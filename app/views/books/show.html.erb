@@ -18,4 +18,14 @@
       <li><strong>Paperback</strong>: <%= @book.paperback %> páginas</li>
     </ul>
   </div>
+
+  <div class="reviews">
+    <% if @book.reviews.any? %>
+      <p></p><%= @book.reviews.count %></p>
+      <%= link_to 'Agregar review', new_book_review_path(@book) %>
+    <% else %>
+      <p>Aún nadie agrega reviews para este libro</p>
+      <%= link_to '¿Te gustaría agregar el primer review?', new_book_review_path(@book) %>
+    <% end %>
+  </div>
 </article>
