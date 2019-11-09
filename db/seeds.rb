@@ -215,3 +215,9 @@ Author.create(name: 'Randall Munroe')
 Author.create(name: 'Anne Frank')
 Author.create(name: 'J.R.R. Tolkien')
 Author.create(name: 'George Orwell')
+
+User.create(
+  email: 'admin@example.org',
+  password: 'hola.123',
+  name: 'Administrador MPGI Reads'
+)
