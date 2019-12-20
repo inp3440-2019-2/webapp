@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @book = Book.find(params[:book_id])
     @review = @book.reviews.build

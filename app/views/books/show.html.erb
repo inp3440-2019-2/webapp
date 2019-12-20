@@ -3,7 +3,7 @@
     <section class="book-info">
       <h1><%= @book.title %></h1>
       <span><%= link_to @book.author.name, @book.author if @book.author.present? %></span>
-      <div class="rating"><%= @book.rating %></div>
+      <div class="rating"><%= star_rating(@book.rating) %></div>
       <p><%= @book.description %></p>
     </section>
     <div class="book-picture">
@@ -20,8 +20,16 @@
   </div>
 
   <div class="reviews">
+    <h2>Reviews</h2>
     <% if @book.reviews.any? %>
-      <p></p><%= @book.reviews.count %></p>
+      <% @book.reviews.each do |review| %>
+        <div class="book-review">
+          <h3><%= review.user.name %></h3>
+          <time><%= review.created_at.strftime("%B %d, %Y") %></time>
+          <%= star_rating(review.rating) %>
+          <p><%= review.comment %></p>
+        </div>
+      <% end %>
       <%= link_to 'Agregar review', new_book_review_path(@book) %>
     <% else %>
       <p>Aún nadie agrega reviews para este libro</p>

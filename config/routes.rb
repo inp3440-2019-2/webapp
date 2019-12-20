@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     resources :authors
   end
 
-  scope :admin do
-    devise_for :users
-  end
+  devise_for :users
 
   resources :books, only: [:index, :show] do
     resources :reviews, only: [:new, :create]

@@ -1,3 +1,20 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.book-review {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #CCC;
+  h3 {
+    margin-bottom: 5px;
+  }
+  time {
+    margin-right: 10px;
+  }
+  p {
+    color: #777;
+  }
+}
+
+.star-rating {
+  display: inline-block;
+}
