@@ -4,6 +4,10 @@ class Admin::BooksController < Admin::ApplicationController
     @books = Book.all
   end
 
+  def show
+    @book = Book.find(params[:id])
+  end
+
   def new
     @book = Book.new
   end
@@ -52,6 +56,6 @@ class Admin::BooksController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :description, :author, :rating, :photo, :isbn, :publisher, :published_at, :paperback)
+      params.require(:book).permit(:title, :description, :author_id, :rating, :photo, :isbn, :publisher, :published_at, :paperback)
     end
 end

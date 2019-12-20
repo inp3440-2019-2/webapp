@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_064947) do
+ActiveRecord::Schema.define(version: 2019_12_20_074837) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_11_09_064947) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "author"
     t.decimal "rating"
     t.string "photo"
     t.string "isbn"
@@ -30,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_11_09_064947) do
     t.string "paperback"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_books_on_author_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_064947) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "authors"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
 end

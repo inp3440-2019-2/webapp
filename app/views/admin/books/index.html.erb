@@ -17,7 +17,7 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.author %></td>
+        <td><%= book.author.name if book.author.present? %></td>
         <td><%= book.rating %></td>
         <td><%= book.isbn %></td>
         <td><%= link_to 'Show', [:admin, book] %></td>

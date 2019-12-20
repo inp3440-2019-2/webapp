@@ -1,0 +1,11 @@
+<h1><%= @author.name %></h1>
+
+<% if @author.books.any? %>
+  <ul class="author-books">
+    <% @author.books.each do |book| %>
+      <li><%= link_to book.title, book %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>El autor no ha publicado libros aún.</p>
+<% end %>

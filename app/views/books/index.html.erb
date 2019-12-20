@@ -5,7 +5,7 @@
       <div class="book">
         <%= image_tag book.photo, alt: "Foto de #{book.title}" %>
         <h3><%= link_to book.title, book %></h3>
-        <span><%= book.author %></span>
+        <span><%= link_to book.author.name, book.author if book.author.present? %></span>
       </div>
     <% end %>
   <% else %>
